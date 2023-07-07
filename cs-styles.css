@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #2b0324;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #30071f;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  resize: vertical;
+}
+
+/* Generated code styles */
+#preview {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#preview h2 {
+  margin-top: 0;
+}
+
+#preview form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#preview form input[type="text"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  resize: vertical;
+}
+
+#preview form input[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #29041b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#preview form input[type="submit"]:hover {
+  background-color: #220418;
+}
+
+/* Additional form types */
+#form-type {
+  margin-bottom: 10px;
+}
+
+/* Row column format for entities */
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.row label {
+  margin-right: 5px;
+}
+
+.row input[type="checkbox"] {
+  margin-right: 10px;
+}

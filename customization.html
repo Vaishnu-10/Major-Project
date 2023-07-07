@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#">QuickIt Up</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="templates.html">Template</a></li>
+        <li><a href="custom-forms.html">Customization</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="profile-dropdown">
+        <button class="profile-button">
+          <img src="images.jpg" alt="Profile">
+        </button>
+        <div class="dropdown-content">
+          <a href="#">My Forms</a>
+          <a href="#">Settings</a>
+          <a href="#">Log Out</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <h1>QuickIt Up</h1>
+  <form id="form">
+    <label for="form-type">Select a form type:</label>
+    <select id="form-type" name="form-type">
+      <!-- Add form type options -->
+    </select>
+    <br><br>
+    <label>Fields:</label>
+    <div class="row">
+      <!-- Add entity checkboxes -->
+    </div>
+    <div class="row">
+      <!-- Add more entity checkboxes -->
+    </div>
+    <br><br>
+    <button type="button" id="generate">Generate HTML Code</button>
+  </form>
+  <br><br>
+  <div id="preview"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

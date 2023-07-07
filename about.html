@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuickIt Up</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-links">
+        <a href="secondpage.html">QuickIt Up</a>
+       
+        <li><a href="templates.html">Template</a></li>
+        <li><a href="custom-forms.html">Customization</a></li>
+      </ul>
+    <div class="profile-dropdown">
+      <button class="profile-button">
+        <img src="images.jpg" alt="Profile">
+      </button>
+      <div class="dropdown-content">
+        <a href="#">My Forms</a>
+        <a href="#">Settings</a>
+        <a href="#">Log Out</a>
+        <a href="about.html">About us</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="image-section">
+    <div class="container">
+      <h2>Images</h2>
+      <p>
+
+        Welcome to RBTechnologies, the leading provider of auto source code generation tools. Our sponsored project, led by Bhavik Shah, aims to simplify and streamline the process of generating source code for forms.
+        
+        Our team of talented individuals is dedicated to delivering high-quality solutions that save time and effort for developers. Meet the members of our exceptional team:</p>
+        
+        <li>Manthan Godha</li>
+        <li>Jatan Shah</li>
+        <li>Smruti Ganapa</li>
+        <li>Vaishnavi Mahamuni</li>
+        
+        <p>Together, we combine our expertise and passion for technology to create innovative tools that empower developers and enhance their productivity</p>
+      <div class="image-gallery">
+        <!-- You can add image tags here for your image gallery -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+  </div>
+</footer>
+
+  <style>
+    /* CSS styles for the navbar */
+    .navbar {
+      background-color:#422d3c;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .profile-dropdown {
+      position: relative;
+      margin-right: 10px;
+    }
+
+    .profile-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .profile-button img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 1;
+      right: 0;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile-dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .about-section {
+        background-color: #f0f0f0;
+        padding: 40px 0;
+      }
+      
+      .image-section {
+        background-color: #fff;
+        padding: 40px 0;
+      }
+      
+      .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+      }
+      
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <script>
+    // JavaScript code can be added here for additional functionality
+  </script>
+</body>
+</html>

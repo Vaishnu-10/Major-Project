@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuickIt Up</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-links">
+        <a href="secondpage.html">QuickIt Up</a>
+       
+        <li><a href="templates.html">Template</a></li>
+        <li><a href="custom-forms.html">Customization</a></li>
+      </ul>
+    <div class="profile-dropdown">
+      <button class="profile-button">
+        <img src="images.jpg" alt="Profile">
+      </button>
+      <div class="dropdown-content">
+        <a href="#">My Forms</a>
+        <a href="#">Settings</a>
+        <a href="#">Log Out</a>
+        <a href="about.html">About us</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="card-container">
+    <div class="card">
+      <h2>Template</h2>
+      <p>This is a template card.</p>
+      <div class="button-container">
+        <a href="templates.html" class="card-button">View Templates</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Customization</h2>
+      <p>This is a customization card.</p>
+      <div class="button-container">
+        <a href="custom-forms.html" class="card-button">Custom Forms</a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* CSS styles for the navbar */
+    .navbar {
+      background-color:#422d3c;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .profile-dropdown {
+      position: relative;
+      margin-right: 10px;
+    }
+
+    .profile-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .profile-button img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 1;
+      right: 0;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile-dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* CSS styles for the cards and buttons */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .card {
+      width: 300px;
+      padding: 20px;
+      border: 8px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .card-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #680d4e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .card-button:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <script>
+    // JavaScript code can be added here for additional functionality
+  </script>
+</body>
+</html>

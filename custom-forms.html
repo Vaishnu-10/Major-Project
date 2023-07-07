@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Code Generator</title>
+  <link rel="stylesheet" href="cs-styles.css">
+</head>
+<body>
+  <h1>HTML Code Generator</h1>
+  <form id="form">
+    <label for="form-type">Select a form type:</label>
+    <select id="form-type" name="form-type">
+      <option value="login">Login Form</option>
+      <option value="contact">Contact Form</option>
+      <option value="feedback">Feedback Form</option>
+      <option value="registration">Registration Form</option>
+      <option value="subscribe">Subscribe Form</option>
+    </select>
+    <br><br>
+    <label>Fields:</label>
+    <div class="row">
+      <input type="checkbox" id="username" name="fields" value="username">
+      <label for="username">Username</label>
+      <input type="checkbox" id="password" name="fields" value="password">
+      <label for="password">Password</label>
+    </div>
+    <div class="row">
+      <input type="checkbox" id="email" name="fields" value="email">
+      <label for="email">Email</label>
+      <input type="checkbox" id="phone" name="fields" value="phone">
+      <label for="phone">Phone</label>
+    </div>
+    <div class="row">
+      <input type="checkbox" id="message" name="fields" value="message">
+      <label for="message">Message</label>
+      <input type="checkbox" id="subject" name="fields" value="subject">
+      <label for="subject">Subject</label>
+    </div>
+    <div class="row">
+      <input type="checkbox" id="gender" name="fields" value="gender">
+      <label for="gender">Gender</label>
+      <input type="checkbox" id="date" name="fields" value="date">
+      <label for="date">Date</label>
+    </div>
+    <div class="row">
+      <input type="checkbox" id="product-required" name="fields" value="product-required">
+      <label for="product-required">Product Required</label>
+      <input type="checkbox" id="appointment-booking" name="fields" value="appointment-booking">
+      <label for="appointment-booking">Appointment Booking</label>
+    </div>
+    <br><br>
+    <button type="button" id="generate">Generate HTML Code</button>
+  </form>
+  <br><br>
+  <div id="preview"></div>
+
+  <!-- Handlebars template -->
+  <script id="template" type="text/x-handlebars-template">
+    <h2>{{ form_type }} Form</h2>
+    <form>
+      {{#each fields}}
+      <div class="row">
+        <label for="{{ this }}">{{ this }}:</label>
+        <input type="text" id="{{ this }}" name="{{ this }}">
+      </div>
+      {{/each}}
+      <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <textarea id="codeTextarea" rows="10" cols="50">{{ html }}</textarea>
+		<div class="button-container">
+			<button id="copyButton" onclick="copyCode()">Copy Code</button>
+			<button id="downloadButton" onclick="downloadCode()">Download Code</button>
+		</div>
+  </script>
+
+  <style>
+		.button-container {
+			display: flex;
+			gap: 10px;
+		}
+	</style>
+	
+	<script>
+		function copyCode() {
+			// Get the textarea element
+			var textarea = document.getElementById("codeTextarea");
+
+			// Select the text within the textarea
+			textarea.select();
+
+			// Copy the selected text to the clipboard
+			document.execCommand("copy");
+
+			// Alert the user that the code has been copied
+			alert("Code copied to clipboard!");
+		}
+
+		function downloadCode() {
+			// Get the textarea element and its value
+			var textarea = document.getElementById("codeTextarea");
+			var code = textarea.value;
+
+			// Create a Blob object from the code content
+			var blob = new Blob([code], { type: "text/plain" });
+
+			// Create a download URL for the Blob
+			var url = URL.createObjectURL(blob);
+
+			// Create a temporary <a> element and set the download attributes
+			var link = document.createElement("a");
+			link.href = url;
+			link.download = "code.txt";
+
+			// Simulate a click event on the link to trigger the download
+			link.click();
+
+			// Clean up the temporary link and URL object
+			URL.revokeObjectURL(url);
+		}
+	</script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <script>
+    // Handle form submission
+    $('#generate').on('click', function () {
+      // Get form data
+      var formType = $('#form-type').val();
+      var fields = $('input[name="fields"]:checked').map(function () {
+        return this.value;
+      }).get();
+
+      // Generate HTML code using Handlebars template
+      var source = $('#template').html();
+      var template = Handlebars.compile(source);
+      var html = template({
+        form_type: formType,
+        fields: fields,
+        html: generateHtml(formType, fields)
+      });
+
+      // Display HTML code in preview area
+      $('#preview').html(html);
+    });
+
+    // Generate HTML code
+    function generateHtml(formType, fields) {
+      var html = '<h2>' + formType + ' Form</h2>\n';
+      html += '<form>\n';
+      fields.forEach(function (field) {
+        html += '<div class="row">\n';
+        html += '\t<label for="' + field + '">' + field + ':</label>\n';
+        html += '\t<input type="text" id="' + field + '" name="' + field + '">\n';
+        html += '</div>\n';
+      });
+      html += '\t<input type="submit" value="Submit">\n';
+      html += '</form>\n';
+      return html;
+    }
+  </script>
+</body>
+</html>

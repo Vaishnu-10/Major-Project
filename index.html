@@ -1,0 +1,17 @@
+<!-- Handlebars template -->
+
+<script id="template" type="text/x-handlebars-template">
+	<h2>{{ form_type }} Form</h2>
+	<form>
+	  {{#each fields}}
+	  <div class="row">
+		<label for="{{ this }}">{{ this }}:</label>
+		<input type="text" id="{{ this }}" name="{{ this }}">
+	  </div>
+	  {{/each}}
+	  <input type="submit" value="Submit">
+	</form>
+	<br><br>
+	<textarea rows="10" cols="50">{{ html }}</textarea>
+  </script>
+  
